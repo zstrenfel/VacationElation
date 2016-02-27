@@ -1,6 +1,5 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+@import "utilities/bourbon/bourbon";
+@import "utilities/neat/neat";
+@import "utilities/base/base";
+@import "pages/*.scss"
 
-.this {
-  color: red;
-}

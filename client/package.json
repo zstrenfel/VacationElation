@@ -32,6 +32,7 @@
     "nodemon": "^1.9.1",
     "react": "0.14.5",
     "react-addons-css-transition-group": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-router": "^2.0.0",
     "reactify": "^1.1.1",
     "through2": "^2.0.0",
@@ -39,5 +40,8 @@
     "watchify": "^3.6.1",
     "webpack": "^1.12.14",
     "webpack-dev-middleware": "^1.5.1"
+  },
+  "dependencies": {
+    "react-router-redux": "^4.0.0"
   }
 }

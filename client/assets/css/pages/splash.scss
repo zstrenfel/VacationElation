@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+
+body {
+  background-color: #FCFCFC;
+  // font: $font-family;
+}
+
+
+.container {
+  @include outer-container();
+  background-color: #fff;
+  font-family: inherit;
+  overflow: auto;
+  height: 100vh;
+}
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+.splash {
+  @include background-image(url('../../imgs/splash.jpg'));
+  background-size: 100% auto;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+
+  h1 {
+    margin-bottom: 5px;
+    font-size: 2em;
+  }
+
+  p {
+    padding-bottom: 20px;
+    color: $medium-gray;
+  }
+
+  .sign-up {
+    @include span-columns(4);
+    @include shift(4);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    text-align: left;
+
+    label {
+      color: $dark-gray
+    }
+  }
+}
