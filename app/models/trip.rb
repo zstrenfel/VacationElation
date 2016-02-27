@@ -9,7 +9,7 @@ class Trip
   field :return_price, type: Integer
   field :destination_id
   
-  has_one :destination 
+  belongs_to  :destination
 
   def self.mongo_client
 		Mongoid::Clients.default

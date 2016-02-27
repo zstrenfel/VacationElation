@@ -1,0 +1,102 @@
+[
+  {
+    "_id": "56d1f77910b88be189762982",
+    "date_start": "Fri Mar 04 2016 04:45:38 GMT+0000 (UTC)",
+    "date_end": "Sun Mar 13 2016 08:48:38 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 358,
+    "depart_price": 302,
+    "return_price": 538,
+    "destination_id": "56d1f77995abbabde7f8e56b"
+  },
+  {
+    "_id": "56d1f779cc29195c6c7fcf07",
+    "date_start": "Thu Mar 03 2016 06:48:45 GMT+0000 (UTC)",
+    "date_end": "Thu Mar 10 2016 09:49:51 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 316,
+    "depart_price": 357,
+    "return_price": 444,
+    "destination_id": "56d1f779733bfcb40a0e79fd"
+  },
+  {
+    "_id": "56d1f779560b9fc32afb66d4",
+    "date_start": "Fri Mar 04 2016 13:11:41 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 05:47:35 GMT+0000 (UTC)",
+    "departure_airport": "SFO",
+    "hotel_prices": 414,
+    "depart_price": 532,
+    "return_price": 265,
+    "destination_id": "56d1f77979af9752b7b9562c"
+  },
+  {
+    "_id": "56d1f779b8f40eb3d49c71b8",
+    "date_start": "Thu Mar 03 2016 02:59:51 GMT+0000 (UTC)",
+    "date_end": "Tue Mar 08 2016 03:36:49 GMT+0000 (UTC)",
+    "departure_airport": "SJC",
+    "hotel_prices": 374,
+    "depart_price": 457,
+    "return_price": 503,
+    "destination_id": "56d1f7792263116656630faf"
+  },
+  {
+    "_id": "56d1f779964058aec3dfc04d",
+    "date_start": "Fri Mar 04 2016 08:32:56 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 02:24:57 GMT+0000 (UTC)",
+    "departure_airport": "LAX",
+    "hotel_prices": 273,
+    "depart_price": 423,
+    "return_price": 425,
+    "destination_id": "56d1f77982616547d2566fb1"
+  },
+  {
+    "_id": "56d1f7793227f1b434e46bf8",
+    "date_start": "Thu Mar 03 2016 00:13:27 GMT+0000 (UTC)",
+    "date_end": "Wed Mar 09 2016 09:13:40 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 474,
+    "depart_price": 526,
+    "return_price": 583,
+    "destination_id": "56d1f7795692652d127f3552"
+  },
+  {
+    "_id": "56d1f779292004034ce4a49f",
+    "date_start": "Thu Mar 03 2016 07:53:06 GMT+0000 (UTC)",
+    "date_end": "Sat Mar 19 2016 17:50:34 GMT+0000 (UTC)",
+    "departure_airport": "LAS",
+    "hotel_prices": 427,
+    "depart_price": 522,
+    "return_price": 590,
+    "destination_id": "56d1f77926574d578ffd9314"
+  },
+  {
+    "_id": "56d1f779c500fb4a1df972a9",
+    "date_start": "Fri Mar 04 2016 20:39:55 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 11:27:23 GMT+0000 (UTC)",
+    "departure_airport": "LAS",
+    "hotel_prices": 276,
+    "depart_price": 538,
+    "return_price": 467,
+    "destination_id": "56d1f779e0930c5000a0f288"
+  },
+  {
+    "_id": "56d1f779057f73e47d248913",
+    "date_start": "Fri Mar 04 2016 00:21:13 GMT+0000 (UTC)",
+    "date_end": "Sat Mar 12 2016 00:51:17 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 489,
+    "depart_price": 226,
+    "return_price": 266,
+    "destination_id": "56d1f7792c7ac9d880c528b7"
+  },
+  {
+    "_id": "56d1f7796a69511f7d4e8d3d",
+    "date_start": "Thu Mar 03 2016 23:53:36 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 07:58:01 GMT+0000 (UTC)",
+    "departure_airport": "LAX",
+    "hotel_prices": 269,
+    "depart_price": 599,
+    "return_price": 244,
+    "destination_id": "56d1f779f3634b441ed7718f"
+  }
+]

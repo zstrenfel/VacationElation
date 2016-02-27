@@ -8,5 +8,5 @@ class Destination
   field :tags, type: Array
   field :description, type: String
   
-  belongs_to :trip
+  has_many :trips
 end
