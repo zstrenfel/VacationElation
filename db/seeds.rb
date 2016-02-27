@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+dest_arr = Destination.all.to_a
+
+Trip.all.each_with_index do |t, index|
+	t.destination = dest_arr[index]
+	t.save
+end
