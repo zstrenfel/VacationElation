@@ -1,4 +1,52 @@
 Rails.application.routes.draw do
+  resources :trips
+  resources :users
+  resources :destinations
+
+  get 'users/:id' => 'users#show'
+  #how to use routing
+  #Get User
+  # => Get http://localhost:3000/users/:id.json
+
+  #Create USer
+  # => Post http://localhost:3000/users.json, body => json
+
+  #Get Destinations
+  # =>  Get http://localhost:3000/destinations.json
+
+  #Get Destination
+  # => Get http://localhost:3000/destinations/:id.json
+  #
+
+  #Get Trips
+  # => Get http://localhost:3000/trips.json
+
+  #Get Trip
+  # => Get http://localhost:3000/trips/:id.json
+  # => return:
+#   {
+#   "trip": {
+#     "id": {
+#       "$oid": "56d1f0c4bcce02e87aff4bf6"
+#     },
+#     "departure_airport": "JFK",
+#     "hotel_prices": 414,
+#     "depart_price": 420,
+#     "return_price": 545,
+#     "date_start": "2016-03-03",
+#     "date_end": "2016-03-14"
+#   }
+# }
+
+
+
+
+
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
