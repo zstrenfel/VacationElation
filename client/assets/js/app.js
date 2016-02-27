@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import Splash from './components/splash'
 import Home from './components/home'
+import TopNav from './components/top-nav'
 
 export default React.createClass({
   getInitialState() {
@@ -19,6 +20,7 @@ export default React.createClass({
     }
     return (
       <div className="app">
+      <TopNav user={this.state.user} />
         {Content}
       </div>
     )

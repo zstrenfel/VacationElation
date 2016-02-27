@@ -74,11 +74,11 @@ gulp.task('default', ['browser-sync', 'browserify'], function() {
 //finds dependencies and updates on changes with watchify
 function browserifySetup() {
   var b = browserify( path.js, {
-    transform: [['babelify', {'presets': ["es2015", "react"]}]],
+    transform: [['babelify', {'presets': ["es2015", "react"]}], ['browserify-css', {autoInject: true}]],
     cache: {},
     packageCache: {},
     fullPaths: true,
-    debug: true
+    debug: true,
   });
   b = watchify(b);
   rebundle(b);
