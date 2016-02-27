@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Diaz",
+    "email": "diaz@diaz.org",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Ingrid",
+    "email": "ingrid@ingrid.biz",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Moreno",
+    "email": "moreno@moreno.name",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Lavonne",
+    "email": "lavonne@lavonne.me",
+    "gender": "M",
+    "password": 12345678
+  },
+  {
+    "name": "Galloway",
+    "email": "galloway@galloway.com",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Lilian",
+    "email": "lilian@lilian.tv",
+    "gender": "M",
+    "password": 12345678
+  },
+  {
+    "name": "Stephens",
+    "email": "stephens@stephens.io",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Tanisha",
+    "email": "tanisha@tanisha.us",
+    "gender": "M",
+    "password": 12345678
+  },
+  {
+    "name": "Wendy",
+    "email": "wendy@wendy.info",
+    "gender": "F",
+    "password": 12345678
+  },
+  {
+    "name": "Martha",
+    "email": "martha@martha.biz",
+    "gender": "M",
+    "password": 12345678
+  }
+]

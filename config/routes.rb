@@ -7,8 +7,27 @@ Rails.application.routes.draw do
   #how to use routing
   #Get User
   # => Get http://localhost:3000/users/:id.json
+  # => return:
+#   {
+#   "user": {
+#     "id": {
+#       "$oid": "56d21922bcce02e87aff4d91"
+#     },
+#     "name": "Moreno",
+#     "email": "moreno@moreno.name",
+#     "gender": "F",
+#     "password": "12345678",
+#     "trips": [
+#       {
+#         "id": {
+#           "$oid": "56d21921bcce02e87aff4d7f"
+#         }
+#       }
+#     ]
+#   }
+# }
 
-  #Create USer
+  #Create User
   # => Post http://localhost:3000/users.json, body => json
 
   #Get Destinations
@@ -16,7 +35,18 @@ Rails.application.routes.draw do
 
   #Get Destination
   # => Get http://localhost:3000/destinations/:id.json
-  #
+  # => return:
+# {
+#   "destination": {
+#     "id": {
+#       "$oid": "56d21120bcce02e87aff4cdc"
+#     },
+#     "city": "Ryderwood",
+#     "state": "Idaho",
+#     "country": "Brazil",
+#     "description": "Lorem adipisicing proident consectetur tempor fugiat."
+#   }
+# }
 
   #Get Trips
   # => Get http://localhost:3000/trips.json
@@ -24,17 +54,26 @@ Rails.application.routes.draw do
   #Get Trip
   # => Get http://localhost:3000/trips/:id.json
   # => return:
-#   {
+# {
 #   "trip": {
 #     "id": {
-#       "$oid": "56d1f0c4bcce02e87aff4bf6"
+#       "$oid": "56d21120bcce02e87aff4cd2"
 #     },
 #     "departure_airport": "JFK",
 #     "hotel_prices": 414,
 #     "depart_price": 420,
 #     "return_price": 545,
 #     "date_start": "2016-03-03",
-#     "date_end": "2016-03-14"
+#     "date_end": "2016-03-14",
+#     "destination": {
+#       "id": {
+#         "$oid": "56d21120bcce02e87aff4cdc"
+#       },
+#       "city": "Ryderwood",
+#       "state": "Idaho",
+#       "country": "Brazil",
+#       "description": "Lorem adipisicing proident consectetur tempor fugiat."
+#     }
 #   }
 # }
 

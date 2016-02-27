@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @trips = @user.trips.to_a
   end
 
   # GET /users/new
