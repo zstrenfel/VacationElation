@@ -6,4 +6,11 @@ json.trip do |t|
   json.return_price @trip.return_price
   json.date_start toDate(@trip.date_start)
   json.date_end toDate(@trip.date_end)
+  json.destination do |d|
+  	json.id @destination.id
+    json.city @destination.city
+    json.state @destination.state
+    json.country @destination.country
+    json.description @destination.description
+  end
 end

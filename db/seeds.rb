@@ -12,3 +12,9 @@ Trip.all.each_with_index do |t, index|
 	t.destination = dest_arr[index]
 	t.save
 end
+
+trip_arr = Trip.all.to_a
+
+User.all.each do |u|
+	u.trips << trip_arr.sample
+end
