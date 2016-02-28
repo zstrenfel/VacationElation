@@ -8,7 +8,7 @@ import Footer from './components/footer'
 export default React.createClass({
   getInitialState() {
     return {
-      user: ""
+    user: "s"
     }
   },
   submit(name) {
