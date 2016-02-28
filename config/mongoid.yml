@@ -101,7 +101,6 @@ development:
 
 
   # Configure Mongoid specific options. (optional)
-  options:
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false
 
@@ -137,9 +136,6 @@ test:
         max_pool_size: 1
 
 production:
-    sessions:
-        default:
-            uri: <%= ENV['MONGOLAB_URI'] %>
-
-            options: 
-                connect_timeout: 15
+  sessions:
+    default:
+      uri: <%= ENV['MONGOLAB_URI'] %>
