@@ -139,6 +139,6 @@ test:
 production:
     clients:
         default:
-            uri: mongodb://h48946:12345678@ds019048.mlab.com:19048/heroku_f3pphnl7
+            uri: mongodb://h48946:12345678@ds039095.mlab.com:39095/coursera_zips
             options: 
                 connect_timeout: 15
