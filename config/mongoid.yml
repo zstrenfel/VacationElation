@@ -139,7 +139,7 @@ test:
 production:
     clients:
         default:
-            uri: <%= ENV['mongodb://h48946:12345678@ds039095.mlab.com:39095/coursera_zips'] %>
+            uri: <%= ENV['MONGOHQ_URL'] %>
             
             options: 
                 connect_timeout: 15
