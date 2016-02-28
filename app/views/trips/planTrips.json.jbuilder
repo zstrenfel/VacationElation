@@ -1,6 +1,12 @@
 json.array!(@ret_trips) do |trip|
 	json.trip do
-	  json.hotel_price trip.hotel_price
+	  json.hotel do 
+	  	json.hotel_name trip["hotel_name"]
+	  	json.hotel_address trip["hotel_address"]
+	  	json.hotel_StarRating trip["hotel_StarRating"]
+	  	json.hotel_GuestRating trip["hotel_GuestRating"]
+	  	json.hotel_price trip["hotel_price"]
+	  end
 
 	  json.departure do 
   		json.depart_price trip["depart_price"]
@@ -13,8 +19,10 @@ json.array!(@ret_trips) do |trip|
   		json.departure_airport_back trip.departure_airport_back
   		json.arrival_airport_back trip.arrival_airport_back
   	  end
+
 	  json.date_start trip["date_start"]
 	  json.date_end trip["date_end"]
+	  
 	  json.destination do 
 	  	json.id trip.destination.id
 	    json.city trip.destination.city

@@ -29,7 +29,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init(null, {
     proxy: "http://localhost:8000",
     files: ["assets/js/bundle.js", "assets/css/bundle.css", "assets/index.html"],
-    browser: "firefox",
+    browser: "chrome",
     port: 7000,
     online: true
   });
