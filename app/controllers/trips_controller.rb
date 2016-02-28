@@ -1,5 +1,45 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  skip_before_filter  :verify_authenticity_token
+
+  #POST /plantrips.json
+  def planTrips
+      hash = {} 
+      hash[:date_start] = params[:date_start]
+      hash[:date_end] = params[:date_end]
+      start_airport = params[:start_airport]
+      hash[:departure_airport_leave] = start_airport
+      hash[:arrival_airport_back] = start_airport
+      tags = params[:tags]
+      max_parice = params[:max_price]
+
+      #find match destinations in descending order
+      match_destinations = Destination.matchTags(tags, start_airport)
+
+      @ret_trips = []
+      #contruct new Trip objects      
+      match_destinations.each do |md|
+        depart_trip = ExpediaWS.findCheapestFlightToDest(start_airport, md, params[:date_start])
+        hash[:depart_price] = depart_trip[:price]
+        hash[:arrival_airport_leave] = depart_trip[:airport]
+
+        return_trip = ExpediaWS.findCheapestFlightFromDest(md, start_airport, params[:date_end])
+        hash[:return_price] = return_trip[:price]
+        hash[:departure_airport_back] = return_trip[:airport]
+
+        hash[:destination_id] = md.id
+        if hash[:depart_price] + hash[:return_price] < params[:max_price]
+          o = Trip.collection.insert_one(hash)
+          @ret_trips << Trip.find(o.inserted_id)
+        end
+      end
+
+      @ret_trips.each do |trip|
+        p trip
+        p trip["depart_price"]
+        p trip[:depart_price]
+      end
+  end
 
   # GET /trips
   # GET /trips.json
@@ -10,7 +50,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @destination = Destination.find(@trip.destination_id)
+    @destination = Destination.find(@trip["destination_id"])
   end
 
   # GET /trips/new
