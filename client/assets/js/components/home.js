@@ -6,16 +6,18 @@ import Rcslider from 'rc-slider'
 import randomcolor from 'randomcolor'
 import classNames from 'classNames'
 import TripContainer from './tripContainer'
+import $ from "jquery"
 
 export default React.createClass({
   getInitialState() {
     return {
-      price: "",
       startDate: moment(),
       endDate: moment(),
-      max_price: 1000,
+      maxPrice: 1000,
       keywords: [],
       airport: "SFO",
+      trip: {},
+      url: "http://localhost:3000/planTrip"
     }
   },
   handleChangeStart(date) {
@@ -25,7 +27,7 @@ export default React.createClass({
     this.setState({endDate: date}, () => console.log("end"));
   },
   handleChangePrice(price) {
-    this.setState({max_price: price});
+    this.setState({maxPrice: price});
   },
   handleClickButton(e) {
     var newWords = this.state.keywords.slice(),
@@ -43,6 +45,31 @@ export default React.createClass({
   handleChangeAirport(airport) {
     this.setState({airport: airport});
   },
+  submit(e) {
+    var self, data;
+    e.preventDefault();
+    self = this;
+
+    data = {
+      startDate: self.state.startDate,
+      endDate: self.state.endDate,
+      maxPrice: self.state.maxPrice,
+      keywords: self.state.keywords,
+      airport: self.state.airport
+    }
+
+    $.ajax({
+      type:'POST',
+      url: self.state.url,
+      data: data
+    })
+    .done((data) => {
+      this.setState({trip: data});
+    })
+    .fail((err) => {
+      console.log('something went wrong');
+    })
+  },
   generateTags() {
     var keywords = ['outdoors', 'city', 'countryside', 'nightlife', 'beach', 'mountains', 'sightseeing', 'relaxing',
                     'fresh-air', 'shopping', 'museum'];
@@ -57,7 +84,6 @@ export default React.createClass({
         backgroundColor: randomcolor({luminosity: 'dark'})
       };
       classes = classNames('keyword', selected);
-      console.log(classes);
       counter += 1;
       return (<button className={classes} name={word} style={style} onClick={self.handleClickButton} key={'b' + counter}>{word}</button>)
     });
@@ -65,10 +91,9 @@ export default React.createClass({
   },
  render() {
     var tags = this.generateTags();
-    console.log(tags);
     return (
       <div className="home" >
-          <div className="trip-params">
+          <form onSubmit={this.submit} className="trip-params">
           <div className='third'>
             <label htmlFor="airport"> Departing Airport </label>
             <input
@@ -95,7 +120,7 @@ export default React.createClass({
             </div>
             <div className='third last'>
               <label htmlFor="price"> Set Your Max Price </label>
-              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.max_price} max={3000}/>
+              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.maxPrice} max={3000}/>
             </div>
             <div className="full">
             <label htmlFor="tags"> Select Your Interests </label>
@@ -103,8 +128,8 @@ export default React.createClass({
               {tags}
             </div>
           </div>
-          <button className={classNames('third', 'search')} name="submit"> Search </button>
-        </div>
+          <button className={classNames('third', 'search')} type="submit"> Search </button>
+        </form>
         <TripContainer />
       </div>
     )

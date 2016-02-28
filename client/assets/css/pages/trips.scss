@@ -3,7 +3,21 @@
   height: 100%;
   min-height: 600px;
   overflow: scroll;
-  padding: 30px 5px;
+  padding: 0px 0px;
+
+  header {
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+
+    h2 {
+      font-size: 1.5em;
+      font-weight: 300;
+      margin-right: 20px;
+    }
+  }
 }
 
 .trip-option {
@@ -12,15 +26,38 @@
   background-color: lighten($light-gray, 10%);
   margin: 10px 0;
   padding: 10px;
+  border-radius: 5px;
 
   h1 {
     font-size: 2em;
     font-weight: 300;
+    margin-bottom: 0;
   }
 
   .location {
     @include span-columns(10);
     height: auto;
+    padding-top: 10px;
+  }
+
+  div.dest-keywords {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+  }
+
+  div.keyword {
+    font-size: .7em;
+    color: $light-gray;
+    height: 20px;
+    line-height: 10px;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    opacity: .5;
+    float: left;
+    border-radius: 5px;
+    background-color: #34495E;
   }
 
   .price {
@@ -28,6 +65,28 @@
     @include omega;
     height: auto;
     color: #1E824C;
+    padding: 5px 5px 5px;
+    height: 100%;
+    text-align: center;
+    border: 1px solid $light-gray;
+    border-radius: 7px;
+    background-color: darken(#fff, 1%);
   }
 
+  table.price-breakdown {
+    font-size: .8em;
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: 15px;
+    td {
+      border: none;
+      padding: 1px;
+    }
+    td.label {
+      color: $medium-gray;
+    }
+  }
+
+  .other-info {
+    @include span-columns(10);
+  }
 }
