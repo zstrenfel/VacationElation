@@ -1,6 +1,6 @@
 json.trip do |t|
   json.id @trip.id
-  json.hotel_prices @trip["hotel_prices"]
+  json.hotel_price @trip["hotel_price"]
 
   json.departure do 
       json.depart_price @trip["depart_price"]
