@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'httparty'
 gem 'mongoid'
+group :production do
+  gem 'rails_12factor'
+end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use SCSS for stylesheets
