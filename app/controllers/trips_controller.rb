@@ -22,11 +22,11 @@ class TripsController < ApplicationController
         city = md.city
         hotel_info = ExpediaWS.searchCheapestHotels(md.city, params[:date_start], params[:date_end])
         if hotel_info
-          hash[:hotel_name] = hotel_info["name"]
-          hash[:hotel_address] = hotel_info["address"]
-          hash[:hotel_StarRating] = hotel_info["StarRating"]
-          hash[:hotel_GuestRating] = hotel_info["GuestRating"]
-          hash[:hotel_price] = hotel_info["hotel_price"]
+          hash[:hotel_name] = hotel_info[:hotel_name]
+          hash[:hotel_address] = hotel_info[:hotel_address]
+          hash[:hotel_StarRating] = hotel_info[:StarRating]
+          hash[:hotel_GuestRating] = hotel_info[:GuestRating]
+          hash[:hotel_price] = hotel_info[:hotel_price]
         end
 
         depart_trip = ExpediaWS.findCheapestFlightToDest(start_airport, md, params[:date_start])
@@ -42,8 +42,13 @@ class TripsController < ApplicationController
         end
 
         hash[:destination_id] = md.id
-        if hash[:depart_price] && hash[:return_price]
-          if hash[:depart_price] + hash[:return_price] < params[:max_price].to_f
+        p hash[:depart_price]
+        p hash[:return_price]
+        p hash[:hotel_price]
+
+        if hash[:depart_price] && hash[:return_price] && hash[:hotel_price]
+          p hash[:depart_price] + hash[:return_price] + hash[:hotel_price]
+          if hash[:depart_price] + hash[:return_price] + hash[:hotel_price] < params[:max_price].to_f
             o = Trip.collection.insert_one(hash)
             @ret_trips << Trip.find(o.inserted_id)
           end

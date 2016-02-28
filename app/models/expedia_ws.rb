@@ -7,7 +7,7 @@ class ExpediaWS
 
   def self.searchHotelwithNL(city)
     query = base_query
-    query["q"] = "cheap+hotel+near+" + city
+    query["q"] = "cheapest+hotel+near+" + city
     hotel_array = get("/nlp/results", :query => query).parsed_response["result"]["hotels"]
     hotel_ids = []
 
@@ -29,16 +29,13 @@ class ExpediaWS
       q = query
       q["hotelids"] = id
       res = get("/hotels", :query => q).parsed_response
-      p res
-      next if res["MatchingHotelCount"] != 0
+      next if res["MatchingHotelCount"] == "0"
       hotel_info = res["HotelInfoList"]["HotelInfo"]
       hotel << hotel_info
       if hotel_info["StatusCode"] == "0"
         price_arr << hotel_info["Price"]["TotalRate"]["Value"].to_f
       end
     end
-
-    p price_arr
 
     if price_arr.size == 0
       return nil
