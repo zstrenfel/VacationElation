@@ -51,6 +51,7 @@
     "randomcolor": "^0.4.3",
     "react-datepicker": "^0.23.2",
     "react-router-redux": "^4.0.0",
+    "react-toastr": "^2.4.0",
     "toastr": "^2.1.2"
   }
 }

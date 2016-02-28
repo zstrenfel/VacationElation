@@ -375,10 +375,20 @@ h3.price {
 
 .no-trips {
   width: 100%;
-  height: 300px;
-  text-align: center; }
+  height: auto;
+  text-align: center;
+  margin-top: 20px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid #f1f1f1; }
   .no-trips .moon {
-    font-size: 2em; }
+    font-size: 2em;
+    -moz-transform: scaleX(-1); }
+  .no-trips aside {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #c4c4c4; }
 
 .splash {
   background-image: url("../../imgs/splash.jpg");

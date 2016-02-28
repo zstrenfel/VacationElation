@@ -137,7 +137,7 @@ export default React.createClass({
           </div>
           <button className={classNames('third', 'search')} type="submit"> Search </button>
         </form>
-        <TripContainer data={this.state.trip} price={this.state.maxPrice}/>
+        <TripContainer data={this.state.trip} price={this.state.maxPrice} status={this.state.status}/>
       </div>
     )
   }

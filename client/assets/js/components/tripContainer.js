@@ -10,8 +10,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 export default React.createClass({
   //trips is an array of trip objects
   componentWillReceiveProps() {
-    console.log('recieving new props');
-    console.log(this.props.data);
+    if (this.props.data !== null) {
+      console.log('recieved real results');
+    };
+  },
+  componentWillUpdate() {
+    console.log('updating');
   },
   generateTrips(trips) {
     var trip_elems;
@@ -27,7 +31,7 @@ export default React.createClass({
     return trip_elems;
   },
   render() {
-    var children = this.props.data !== null ? this.generateTrips(this.props.data): () => { return (<NoTrips />)};
+    var children = this.props.data !== null ? this.generateTrips(this.props.data) : <NoTrips />;
     console.log('children');console.log(children);
    return (
     <div className="trip-container">

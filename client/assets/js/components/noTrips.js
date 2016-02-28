@@ -10,7 +10,7 @@ export default React.createClass({
     return (
        <div className='no-trips'>
           <span className="spin moon"> {emoji.get("new_moon_with_face")} </span>
-          <aside> You haven't searched for anything yet. </aside>
+          <aside> You haven't searched for anything, yet. </aside>
         </div>
     )
   }

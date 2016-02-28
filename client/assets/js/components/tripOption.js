@@ -40,7 +40,7 @@ export default React.createClass({
       <div className="trip-option">
         <div className="location">
           <h1> {dep.departure_airport_leave} - <span style={hStyle}>{dep.arrival_airport_leave}</span></h1>
-          <sub className="subscript">Travel to <b> {dest.city} </b></sub>
+          <sub className="subscript">Travel to <b> {dest.city} </b> and stay at <b> Hotel </b></sub>
           <p className="description">
             {dest.description}
           </p>
