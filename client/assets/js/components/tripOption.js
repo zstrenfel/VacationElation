@@ -1,20 +1,24 @@
 import React from 'react'
 import { render } from 'react-dom'
+import emoji from 'node-emoji'
 import randomcolor from 'randomcolor'
 
 
 
 export default React.createClass({
-  generateTags() {
-    var keywords = ['outdoors', 'city', 'countryside'];
+  generateTags(tags) {
     var self = this;
-    var tag_elems = keywords.map(function(word) {
+    var tag_elems = tags.map(function(word) {
       return (<div className='keyword'>{word}</div>)
     });
     return tag_elems;
   },
   render() {
-    var tags = this.generateTags();
+    var trip = this.props.trip;
+    var dep = trip.departure,
+        ret= trip.return,
+        dest = trip.destination;
+    var tags = this.generateTags(dest.tags);
     var style = {
       color: randomcolor({hue: "blue"})
     }
@@ -22,11 +26,11 @@ export default React.createClass({
     return (
       <div className="trip-option">
         <div className="location">
-          <h1>SFO - <span style={style}>LAX</span></h1>
-          <sub className="subscrirpt">Travel to <b> Los Angelos, California </b></sub>
-          <aside className="other-info">
-          other information (keywords, etx)
-          </aside>
+          <h1> {dep.departure_airport_leave} {emoji.get('arrow_right')} <span style={style}>{dep.arrival_airport_leave}</span></h1>
+          <sub className="subscript">Travel to <b> {dest.city} </b></sub>
+          <p className="description">
+            {dest.description}
+          </p>
           <div className="dest-keywords">
             {tags}
           </div>
@@ -39,7 +43,7 @@ export default React.createClass({
             </tr>
             <tr>
               <td className="label">Flight</td>
-              <td>+ $700</td>
+              <td>+ {dep.depart_price}</td>
             </tr>
           </table>
           <h1> $1000 </h1>

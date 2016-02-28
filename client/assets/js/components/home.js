@@ -18,15 +18,16 @@ export default React.createClass({
       maxPrice: 1000,
       keywords: [],
       airport: "SFO",
-      trip: {},
-      url: "http://localhost:3000/plantrips.json"
+      trip: null,
+      url: "http://localhost:3000/plantrips.json",
+      loaded: true
     }
   },
   handleChangeStart(date) {
-    this.setState({startDate: date}, () => console.log("start"));
+    this.setState({startDate: date});
   },
   handleChangeEnd(date) {
-    this.setState({endDate: date}, () => console.log("end"));
+    this.setState({endDate: date});
   },
   handleChangePrice(price) {
     this.setState({maxPrice: price});
@@ -37,7 +38,6 @@ export default React.createClass({
       newWords.push(word);
       this.setState({keywords: newWords});
     } else {
-      console.log(this.state.keywords);
       var index = this.state.keywords.indexOf(word);
       newWords.splice(index, 1);
       this.setState({keywords: newWords});
@@ -47,7 +47,6 @@ export default React.createClass({
     this.setState({airport: airport});
   },
   submit(e) {
-    console.log('submitting');
     var self, data;
     e.preventDefault();
     self = this;
@@ -59,7 +58,8 @@ export default React.createClass({
       tags: self.state.keywords,
       start_airport: self.state.airport
     };
-    console.log(data);
+
+    this.setState({loaded: false});
     $.ajax({
       type:'POST',
       url: self.state.url,
@@ -73,6 +73,8 @@ export default React.createClass({
       console.log(err);
       console.log('something went wrong');
     })
+
+    this.setState({loaded: true});
   },
   generateTags() {
     var keywords = ['outdoors', 'city', 'countryside', 'nightlife', 'beach', 'mountains', 'sightseeing', 'relaxing',
@@ -90,8 +92,8 @@ export default React.createClass({
     return tag_elems;
   },
  render() {
-    console.log(this.state.trip);
     var tags = this.generateTags();
+    console.log(this.state.trip);
     return (
       <div className="home">
           <form onSubmit={this.submit} className="trip-params">
@@ -135,7 +137,7 @@ export default React.createClass({
           </div>
           <button className={classNames('third', 'search')} type="submit"> Search </button>
         </form>
-        <TripContainer data={this.state.trip}/>
+        <TripContainer data={this.state.trip} loaded={this.state.loaded}/>
       </div>
     )
   }

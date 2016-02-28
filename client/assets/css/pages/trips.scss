@@ -22,7 +22,8 @@
 
 .trip-option {
   @include span-columns(12);
-  height: 150px;
+  // height: 150px;
+  overflow: auto;
   background-color: lighten($light-gray, 10%);
   margin: 10px 0;
   padding: 10px;
@@ -34,16 +35,24 @@
     margin-bottom: 0;
   }
 
+  .subscript {
+    margin-top: -5;
+  }
   .location {
     @include span-columns(10);
     height: auto;
-    padding-top: 10px;
   }
 
   div.dest-keywords {
     display: inline-block;
     height: auto;
     width: 100%;
+  }
+
+  p.description {
+    width: 100%;
+    font-size: .7em;
+    color: darken($light-gray, 30%);
   }
 
   div.keyword {
@@ -63,10 +72,8 @@
   .price {
     @include span-columns(2);
     @include omega;
-    height: auto;
     color: #1E824C;
     padding: 5px 5px 5px;
-    height: 100%;
     text-align: center;
     border: 1px solid $light-gray;
     border-radius: 7px;

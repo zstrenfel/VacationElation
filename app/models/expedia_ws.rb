@@ -20,6 +20,7 @@ class ExpediaWS
     p departureAirport
     p arrivalAirport
     p departureDate
+    p res
     res["offers"].each do |o|
       arr << o["totalFare"].to_f
     end
