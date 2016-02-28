@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bson_ext'
+
 gem 'httparty'
 gem 'mongoid'
 group :production do
