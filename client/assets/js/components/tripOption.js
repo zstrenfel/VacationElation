@@ -19,14 +19,27 @@ export default React.createClass({
         ret= trip.return,
         dest = trip.destination;
     var tags = this.generateTags(dest.tags);
-    var style = {
+    var hStyle = {
       color: randomcolor({hue: "blue"})
+    }
+
+
+    var flightCost = Math.floor(dep.depart_price + ret.return_price);
+    var hotelCost = Math.floor(300.00);
+    var finalCost = hotelCost + flightCost;
+    var priceStyle;
+     if (finalCost < this.props.price - 150) {
+      priceStyle = {color: '#1E824C'};
+     } else if (finalCost >= this.props.price -150 && finalCost <= this.props.price + 100) {
+      priceStyle = {color: '#F2784B'};
+    } else {
+      priceStyle = {color: '#EF4836'}
     }
 
     return (
       <div className="trip-option">
         <div className="location">
-          <h1> {dep.departure_airport_leave} {emoji.get('arrow_right')} <span style={style}>{dep.arrival_airport_leave}</span></h1>
+          <h1> {dep.departure_airport_leave} - <span style={hStyle}>{dep.arrival_airport_leave}</span></h1>
           <sub className="subscript">Travel to <b> {dest.city} </b></sub>
           <p className="description">
             {dest.description}
@@ -39,14 +52,14 @@ export default React.createClass({
           <table className="price-breakdown">
             <tr>
               <td className="label">Hotel</td>
-              <td>+ $300</td>
+              <td>{"+ $" + hotelCost.toString()}</td>
             </tr>
             <tr>
               <td className="label">Flight</td>
-              <td>+ {dep.depart_price}</td>
+              <td>{"+ $" + flightCost.toString()}</td>
             </tr>
           </table>
-          <h1> $1000 </h1>
+          <h1 style={priceStyle}> {"$" + finalCost.toString()} </h1>
         </div>
       </div>
     )

@@ -344,7 +344,7 @@ h3.price {
     font-weight: 400;
     color: #999; }
   .trip-params .rc-slider {
-    margin-top: 20px; }
+    margin-top: 10px; }
   .trip-params .tags {
     width: 100%;
     overflow: auto;
@@ -466,7 +466,8 @@ h3.price {
   background-color: #f7f7f7;
   margin: 10px 0;
   padding: 10px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  position: relative; }
   .trip-option:last-child {
     margin-right: 0; }
   .trip-option h1 {
@@ -514,13 +515,16 @@ h3.price {
     text-align: center;
     border: 1px solid #ddd;
     border-radius: 7px;
-    background-color: #fcfcfc; }
+    background-color: #fcfcfc;
+    margin-top: 3%; }
     .trip-option .price:last-child {
       margin-right: 0; }
+    .trip-option .price h1 {
+      font-size: 1.8em; }
   .trip-option table.price-breakdown {
     font-size: .8em;
     border-bottom: 1px solid #ddd;
-    margin-bottom: 15px; }
+    margin-bottom: 5px; }
     .trip-option table.price-breakdown td {
       border: none;
       padding: 1px; }
@@ -533,6 +537,20 @@ h3.price {
     width: 82.94039%; }
     .trip-option .other-info:last-child {
       margin-right: 0; }
+
+.example-enter {
+  opacity: 0.01; }
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
+.example-leave {
+  opacity: 1; }
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in; }
 
 .datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow {
   margin-left: -8px;
