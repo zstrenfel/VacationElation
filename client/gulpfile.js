@@ -61,7 +61,7 @@ gulp.task('sass', function() {
       }
     }))
     .pipe(sassGlob())
-    .pipe(sass({style: 'expanded'}))
+    .pipe(sass({outputStyle: 'compressed'}))
     .pipe(concat('bundle.css'))
     .pipe(plumber.stop())
     .pipe(gulp.dest('./assets/css/'))
@@ -96,6 +96,6 @@ function rebundle(b) {
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
     .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
-    // .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./assets/js/'))
 };
