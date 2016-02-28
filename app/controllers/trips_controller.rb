@@ -4,15 +4,14 @@ class TripsController < ApplicationController
 
   #POST /plantrips.json
   def planTrips
-      date_start = params[:date_start]
-      date_end = params[:date_end]
+      hash = {} 
+      hash[:date_start] = params[:date_start]
+      hash[:date_end] = params[:date_end]
       start_airport = params[:start_airport]
+      hash[:departure_airport_leave] = start_airport
+      hash[:arrival_airport_back] = start_airport
       tags = params[:tags]
-
-      hash = {}
-      hash[:date_start] = date_start
-      hash[:date_end] = date_end
-      hash[:departure_airport] = start_airport
+      max_parice = params[:max_price]
 
       #find match destinations in descending order
       match_destinations = Destination.matchTags(tags, start_airport)
@@ -20,15 +19,25 @@ class TripsController < ApplicationController
       @ret_trips = []
       #contruct new Trip objects      
       match_destinations.each do |md|
-        depart = ExpediaWS.findCheapestFlightToDest(start_airport, md, date_start)
-        depart_price = depart[:price]
-        return_price = ExpediaWS.findCheapestFlightFromDest(md, start_airport, date_end)
-        #build a new Trip here
-        hash[:depart_price] = depart_price
-        hash[:return_price] = return_price
+        depart_trip = ExpediaWS.findCheapestFlightToDest(start_airport, md, params[:date_start])
+        hash[:depart_price] = depart_trip[:price]
+        hash[:arrival_airport_leave] = depart_trip[:airport]
+
+        return_trip = ExpediaWS.findCheapestFlightFromDest(md, start_airport, params[:date_end])
+        hash[:return_price] = return_trip[:price]
+        hash[:departure_airport_back] = return_trip[:airport]
+
         hash[:destination_id] = md.id
-        o = Trip.collection.insert_one(hash)
-        @ret_trips << Trip.find(o.inserted_id)
+        if hash[:depart_price] + hash[:return_price] < params[:max_price]
+          o = Trip.collection.insert_one(hash)
+          @ret_trips << Trip.find(o.inserted_id)
+        end
+      end
+
+      @ret_trips.each do |trip|
+        p trip
+        p trip["depart_price"]
+        p trip[:depart_price]
       end
   end
 
