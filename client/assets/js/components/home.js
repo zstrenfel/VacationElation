@@ -20,7 +20,7 @@ export default React.createClass({
       airport: "SFO",
       trip: null,
       url: "http://localhost:3000/plantrips.json",
-      loaded: true
+      status: null
     }
   },
   handleChangeStart(date) {
@@ -50,7 +50,7 @@ export default React.createClass({
     var self, data;
     e.preventDefault();
     self = this;
-
+    this.setState({status: "loading"});
     data = {
       date_start: self.state.startDate.format('YYYY-MM-DD'),
       date_end: self.state.endDate.format('YYYY-MM-DD'),
@@ -58,8 +58,6 @@ export default React.createClass({
       tags: self.state.keywords,
       start_airport: self.state.airport
     };
-
-    this.setState({loaded: false});
     $.ajax({
       type:'POST',
       url: self.state.url,
@@ -67,14 +65,13 @@ export default React.createClass({
     })
     .done((data) => {
       console.log(emoji.get('fire'));
-      this.setState({trip: data});
+      this.setState({trip: data, status:"loaded"});
     })
     .fail((err) => {
       console.log(err);
       console.log('something went wrong');
+      this.setState({status:"error"});
     })
-
-    this.setState({loaded: true});
   },
   generateTags() {
     var keywords = ['outdoors', 'city', 'countryside', 'nightlife', 'beach', 'mountains', 'sightseeing', 'relaxing',
@@ -127,7 +124,7 @@ export default React.createClass({
             <div className='third last'>
               <label htmlFor="price"> Set Your Max Price </label>
               <h3 className="price"> ${this.state.maxPrice} </h3>
-              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.maxPrice} max={3000}/>
+              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.maxPrice} max={2000}/>
             </div>
             <div className="full">
             <label htmlFor="tags"> Select Your Interests </label>

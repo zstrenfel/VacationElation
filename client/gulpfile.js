@@ -96,6 +96,6 @@ function rebundle(b) {
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
     .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./assets/js/'))
 };

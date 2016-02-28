@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import { browserHistory } from 'react-router'
 
 
 export default React.createClass({
@@ -12,9 +13,11 @@ export default React.createClass({
     }
   },
   handleChange(name, e) {
-    var change = {};
+    var change = {},
+        path = "/user/dashboard";
     change[name] = e.target.value;
     this.setState(change)
+    browserHistory.push(path)
   },
   submit(e) {
     e.preventDefault();

@@ -4,11 +4,13 @@ import Splash from './components/splash'
 import Home from './components/home'
 import TopNav from './components/top-nav'
 import Footer from './components/footer'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
 
 export default React.createClass({
   getInitialState() {
     return {
-    user: "s"
+    user: ""
     }
   },
   submit(name) {
@@ -19,12 +21,15 @@ export default React.createClass({
     if (this.state.user === "") {
       Content = <Splash handleSubmit={this.submit}/>
     } else {
-      Content = <Home />
+      Content = (<ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
+                  <Home />
+                  </ReactCSSTransitionGroup>
+                )
     }
     return (
       <div className="app">
       <TopNav user={this.state.user} />
-        {Content}
+          {Content}
       </div>
     )
   }

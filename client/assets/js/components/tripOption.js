@@ -6,10 +6,12 @@ import randomcolor from 'randomcolor'
 
 
 export default React.createClass({
-  generateTags(tags) {
+  generateTags(tags, loc) {
     var self = this;
+    var counter = 0;
     var tag_elems = tags.map(function(word) {
-      return (<div className='keyword'>{word}</div>)
+      counter ++;
+      return (<div className='keyword' key={loc + counter}>{word}</div>)
     });
     return tag_elems;
   },
@@ -17,15 +19,16 @@ export default React.createClass({
     var trip = this.props.trip;
     var dep = trip.departure,
         ret= trip.return,
-        dest = trip.destination;
-    var tags = this.generateTags(dest.tags);
+        dest = trip.destination,
+        hotel = trip.hotel;
+    var tags = this.generateTags(dest.tags, dep.arrival_airport_leave);
     var hStyle = {
       color: randomcolor({hue: "blue"})
     }
 
 
     var flightCost = Math.floor(dep.depart_price + ret.return_price);
-    var hotelCost = Math.floor(300.00);
+    var hotelCost = Math.floor(hotel.hotel_price);
     var finalCost = hotelCost + flightCost;
     var priceStyle;
      if (finalCost < this.props.price - 150) {
@@ -40,7 +43,7 @@ export default React.createClass({
       <div className="trip-option">
         <div className="location">
           <h1> {dep.departure_airport_leave} - <span style={hStyle}>{dep.arrival_airport_leave}</span></h1>
-          <sub className="subscript">Travel to <b> {dest.city} </b> and stay at <b> Hotel </b></sub>
+          <sub className="subscript">Travel to <b> {dest.city} </b> and stay at <b> {hotel.hotel_name} </b></sub>
           <p className="description">
             {dest.description}
           </p>
@@ -50,6 +53,7 @@ export default React.createClass({
         </div>
         <div className="price">
           <table className="price-breakdown">
+            <tbody>
             <tr>
               <td className="label">Hotel</td>
               <td>{"+ $" + hotelCost.toString()}</td>
@@ -58,6 +62,7 @@ export default React.createClass({
               <td className="label">Flight</td>
               <td>{"+ $" + flightCost.toString()}</td>
             </tr>
+            </tbody>
           </table>
           <h1 style={priceStyle}> {"$" + finalCost.toString()} </h1>
         </div>

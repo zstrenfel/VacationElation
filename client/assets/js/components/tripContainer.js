@@ -3,6 +3,8 @@ import { render } from 'react-dom'
 import TripOption from './tripOption'
 import emoji from 'node-emoji'
 import NoTrips from './noTrips'
+import Loading from './loading'
+import ErrorTrip from './error'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
@@ -30,14 +32,33 @@ export default React.createClass({
     console.log(trip_elems);
     return trip_elems;
   },
+  generateChildren(status) {
+    switch(status) {
+      case null:
+        return ( <NoTrips />);
+        break;
+      case 'loading':
+        return <Loading />
+        break;
+      case 'loaded':
+        return this.generateTrips(this.props.data);
+        break;
+      case 'error':
+        return <ErrorTrip />
+        break;
+      default:
+        return (<NoTrips />);
+    }
+  },
   render() {
-    var children = this.props.data !== null ? this.generateTrips(this.props.data) : <NoTrips />;
-    console.log('children');console.log(children);
+    var children = this.generateChildren(this.props.status);
    return (
     <div className="trip-container">
       <header>
         <h2>{emoji.get('mag')}&nbsp;&nbsp;{emoji.get('ticket')}&nbsp;&nbsp;{emoji.get('airplane')}&nbsp;&nbsp;{emoji.get('information_desk_person')}</h2>
+        <aside> Where will you go next? </aside>
       </header>
+      <hr />
         <ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={500} transitionLeaveTimeout={300}>
          {children}
         </ReactCSSTransitionGroup>
