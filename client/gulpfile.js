@@ -9,7 +9,9 @@ var gulp = require('gulp'),
     watchify = require('watchify'),
     source = require('vinyl-source-stream'),
     plumber = require('gulp-plumber'),
-    browserSync = require('browser-sync');
+    buffer = require('vinyl-buffer'),
+    browserSync = require('browser-sync'),
+    uglify = require('gulp-uglify');
 
 //file location paths
 var path = {
@@ -93,5 +95,7 @@ function rebundle(b) {
   return stream
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
     .pipe(source('bundle.js'))
+    .pipe(buffer()) // <----- convert from streaming to buffered vinyl file object
+    .pipe(uglify())
     .pipe(gulp.dest('./assets/js/'))
 };

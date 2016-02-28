@@ -189,7 +189,8 @@ html, body {
   vertical-align: baseline; }
 
 body {
-  background-color: #FCFCFC; }
+  background-image: url("../../imgs/geometry2.png");
+  background-image: url("../../imgs/geometry2.png"); }
 
 .divider {
   display: block;
@@ -204,15 +205,19 @@ body {
   background-color: #fff;
   font-family: inherit;
   overflow: auto;
-  height: 100vh; }
+  height: 100vh;
+  position: relative; }
   .container::after {
     clear: both;
     content: "";
     display: table; }
 
 .app {
+  display: block;
   height: 100%;
-  width: 100%; }
+  overflow: auto;
+  width: 100%;
+  border-bottom: 10px solid #333; }
 
 .form, .trip-params, .splash .sign-up {
   float: left;
@@ -229,7 +234,25 @@ body {
 
 .top-nav {
   overflow: hidden;
-  background-color: #34495E; }
+  background-color: #333;
+  height: 50px;
+  border: 2px solid #333;
+  position: relative; }
+  .top-nav img {
+    margin-left: 20px;
+    height: 100px;
+    width: auto;
+    opacity: 1;
+    display: inline; }
+  .top-nav h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 10px;
+    display: inline;
+    position: absolute;
+    top: 0; }
   .top-nav ul {
     list-style-type: none;
     padding: 0;
@@ -255,8 +278,26 @@ body {
   background-color: #999999;
   color: #000; }
 
+.half {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .half:last-child {
+    margin-right: 0; }
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #333;
+  height: 10px;
+  text-align: center;
+  padding-top: 5px; }
+
 .home {
-  height: 100%; }
+  height: calc(100% - 50px);
+  overflow: auto; }
 
 .third {
   float: left;
@@ -269,6 +310,13 @@ body {
     margin-right: 0; }
   .third:nth-child(3n+1) {
     clear: left; }
+
+h3.price {
+  font-weight: 300;
+  font-size: 1.3em;
+  color: #777777;
+  margin: 0 auto;
+  text-align: center; }
 
 .full {
   float: left;
@@ -304,30 +352,33 @@ body {
     border: 1px solid #eaeaea;
     padding: 5px;
     text-align: center; }
-  .trip-params button.keyword {
+  .trip-params div.keyword {
     font-size: .7em;
     height: 20px;
     line-height: 10px;
-    width: auto;
+    width: calc(50% - 10px);
+    float: left;
     padding: 5px;
     margin: 5px;
-    opacity: .5;
-    transition: opacity 300ms ease-in; }
-    .trip-params button.keyword:hover {
-      opacity: 1; }
+    transition: background-color 300ms ease-in;
+    display: block;
+    background-color: #BDC3C7;
+    border-radius: 3px;
+    cursor: pointer; }
+    .trip-params div.keyword:hover {
+      background-color: #a1aab0; }
+  .trip-params div.keyword.selected {
+    background-color: #34495E;
+    color: #ddd; }
   .trip-params button.search {
     margin-top: 15px; }
-  .trip-params button.keyword.selected {
-    opacity: 1; }
 
 .splash {
   background-image: url("../../imgs/splash.jpg");
   background-image: url("../../imgs/splash.jpg");
   background-size: 100% auto;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  padding-top: 40px; }
+  height: calc(100% - 50px);
+  text-align: center; }
   .splash h1 {
     margin-bottom: 5px;
     font-size: 2em; }
@@ -335,7 +386,47 @@ body {
     padding-bottom: 20px;
     color: #999; }
   .splash .sign-up {
-    background-color: rgba(255, 255, 255, 0.9); }
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
+    text-align: center;
+    background-color: #fcfcfc;
+    border: 1px solid #eaeaea;
+    border-radius: 5px; }
+    .splash .sign-up:last-child {
+      margin-right: 0; }
+    .splash .sign-up label {
+      font-weight: 400;
+      color: #999; }
+  .splash .half {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    padding-top: 30px; }
+    .splash .half:last-child {
+      margin-right: 0; }
+    .splash .half.splash-content {
+      height: 100%;
+      padding-top: 30px;
+      background-color: rgba(255, 255, 255, 0.9); }
+    .splash .half img.hula {
+      margin-top: 30px;
+      height: 500px;
+      width: auto; }
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    margin-top: 200px; }
+  to {
+    opacity: 1;
+    margin-top: 0px; } }
+  .splash .rise {
+    animation-name: rise;
+    animation-duration: 1.5s; }
 
 .trip-container {
   float: left;
@@ -345,9 +436,19 @@ body {
   height: 100%;
   min-height: 600px;
   overflow: scroll;
-  padding: 30px 5px; }
+  padding: 0px 0px; }
   .trip-container:last-child {
     margin-right: 0; }
+  .trip-container header {
+    width: 100%;
+    height: 50px;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    text-align: center; }
+    .trip-container header h2 {
+      font-size: 1.5em;
+      font-weight: 300;
+      margin-right: 20px; }
 
 .trip-option {
   float: left;
@@ -357,20 +458,39 @@ body {
   height: 150px;
   background-color: #f7f7f7;
   margin: 10px 0;
-  padding: 10px; }
+  padding: 10px;
+  border-radius: 5px; }
   .trip-option:last-child {
     margin-right: 0; }
   .trip-option h1 {
     font-size: 2em;
-    font-weight: 300; }
+    font-weight: 300;
+    margin-bottom: 0; }
   .trip-option .location {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 82.94039%;
-    height: auto; }
+    height: auto;
+    padding-top: 10px; }
     .trip-option .location:last-child {
       margin-right: 0; }
+  .trip-option div.dest-keywords {
+    display: inline-block;
+    height: auto;
+    width: 100%; }
+  .trip-option div.keyword {
+    font-size: .7em;
+    color: #ddd;
+    height: 20px;
+    line-height: 10px;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    opacity: .5;
+    float: left;
+    border-radius: 5px;
+    background-color: #34495E; }
   .trip-option .price {
     float: left;
     display: block;
@@ -378,8 +498,30 @@ body {
     width: 14.70196%;
     margin-right: 0;
     height: auto;
-    color: #1E824C; }
+    color: #1E824C;
+    padding: 5px 5px 5px;
+    height: 100%;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    background-color: #fcfcfc; }
     .trip-option .price:last-child {
+      margin-right: 0; }
+  .trip-option table.price-breakdown {
+    font-size: .8em;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px; }
+    .trip-option table.price-breakdown td {
+      border: none;
+      padding: 1px; }
+    .trip-option table.price-breakdown td.label {
+      color: #999; }
+  .trip-option .other-info {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%; }
+    .trip-option .other-info:last-child {
       margin-right: 0; }
 
 .datepicker__tether-element-attached-top .datepicker__triangle, .datepicker__tether-element-attached-bottom .datepicker__triangle, .datepicker__year-read-view--down-arrow {

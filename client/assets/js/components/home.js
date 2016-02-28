@@ -6,30 +6,33 @@ import Rcslider from 'rc-slider'
 import randomcolor from 'randomcolor'
 import classNames from 'classNames'
 import TripContainer from './tripContainer'
+import $ from "jquery"
+import emoji from 'node-emoji'
+
 
 export default React.createClass({
   getInitialState() {
     return {
-      price: "",
-      startDate: moment(),
-      endDate: moment(),
-      max_price: 1000,
+      startDate: moment().add(1, 'days'),
+      endDate: moment().add(2, 'days'),
+      maxPrice: 1000,
       keywords: [],
       airport: "SFO",
+      trip: {},
+      url: "http://localhost:3000/plantrips.json"
     }
   },
   handleChangeStart(date) {
-    this.setState({start_date: date});
+    this.setState({startDate: date}, () => console.log("start"));
   },
   handleChangeEnd(date) {
     this.setState({endDate: date}, () => console.log("end"));
   },
   handleChangePrice(price) {
-    this.setState({max_price: price});
+    this.setState({maxPrice: price});
   },
-  handleClickButton(e) {
-    var newWords = this.state.keywords.slice(),
-        word = e.target.name;
+  handleClickButton(word) {
+    var newWords = this.state.keywords.slice();
     if (this.state.keywords.indexOf(word) < 0) {
       newWords.push(word);
       this.setState({keywords: newWords});
@@ -43,6 +46,34 @@ export default React.createClass({
   handleChangeAirport(airport) {
     this.setState({airport: airport});
   },
+  submit(e) {
+    console.log('submitting');
+    var self, data;
+    e.preventDefault();
+    self = this;
+
+    data = {
+      date_start: self.state.startDate.format('YYYY-MM-DD'),
+      date_end: self.state.endDate.format('YYYY-MM-DD'),
+      max_price: self.state.maxPrice,
+      tags: self.state.keywords,
+      start_airport: self.state.airport
+    };
+    console.log(data);
+    $.ajax({
+      type:'POST',
+      url: self.state.url,
+      data: data
+    })
+    .done((data) => {
+      console.log(emoji.get('fire'));
+      this.setState({trip: data});
+    })
+    .fail((err) => {
+      console.log(err);
+      console.log('something went wrong');
+    })
+  },
   generateTags() {
     var keywords = ['outdoors', 'city', 'countryside', 'nightlife', 'beach', 'mountains', 'sightseeing', 'relaxing',
                     'fresh-air', 'shopping', 'museum'];
@@ -50,27 +81,22 @@ export default React.createClass({
         counter = 0;
     var tag_elems = keywords.map(function(word) {
       var selected = {},
-          style,
           classes;
       selected.selected = self.state.keywords.indexOf(word) > -1 ? true : false;
-      style = {
-        backgroundColor: randomcolor({luminosity: 'dark'})
-      };
       classes = classNames('keyword', selected);
-      console.log(classes);
       counter += 1;
-      return (<button className={classes} name={word} style={style} onClick={self.handleClickButton} key={'b' + counter}>{word}</button>)
+      return (<div className={classes} data-name={word} onClick={self.handleClickButton.bind(null, word)} key={'b' + counter}>{word}</div>)
     });
     return tag_elems;
   },
  render() {
+    console.log(this.state.trip);
     var tags = this.generateTags();
-    console.log(tags);
     return (
-      <div className="home" >
-          <div className="trip-params">
+      <div className="home">
+          <form onSubmit={this.submit} className="trip-params">
           <div className='third'>
-            <label htmlFor="airport"> Departing Airport </label>
+            <label htmlFor="airport"> Departing Airport (e.g. SFO) </label>
             <input
                 value={this.state.airport}
                 onChange={this.handleChangeAirport}/>
@@ -78,10 +104,12 @@ export default React.createClass({
           <div className='third'>
             <label htmlFor="startDate"> Starting Avaliability </label>
             <DatePicker
+                excludeDates={[moment()]}
                 selected={this.state.startDate}
                 startDate={this.state.startDate}
                 endDate={this.state.endDate}
                 onChange={this.handleChangeStart}
+                popoverAttachment='top center'
                 placeholderText="Click to select a start date" />
           </div>
           <div className='third'>
@@ -91,11 +119,13 @@ export default React.createClass({
                 startDate={this.state.startDate}
                 endDate={this.state.endDate}
                 onChange={this.handleChangeEnd}
-                placeholderText="Click to select a end date"/>
+                popoverAttachment='top center'
+                placeholderText="Click to select an end date"/>
             </div>
             <div className='third last'>
               <label htmlFor="price"> Set Your Max Price </label>
-              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.max_price} max={3000}/>
+              <h3 className="price"> ${this.state.maxPrice} </h3>
+              <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.maxPrice} max={3000}/>
             </div>
             <div className="full">
             <label htmlFor="tags"> Select Your Interests </label>
@@ -103,9 +133,9 @@ export default React.createClass({
               {tags}
             </div>
           </div>
-          <button className={classNames('third', 'search')} name="submit"> Search </button>
-        </div>
-        <TripContainer />
+          <button className={classNames('third', 'search')} type="submit"> Search </button>
+        </form>
+        <TripContainer data={this.state.trip}/>
       </div>
     )
   }

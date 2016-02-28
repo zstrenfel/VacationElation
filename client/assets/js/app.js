@@ -3,18 +3,21 @@ import { render } from 'react-dom'
 import Splash from './components/splash'
 import Home from './components/home'
 import TopNav from './components/top-nav'
+import Footer from './components/footer'
 
 export default React.createClass({
   getInitialState() {
     return {
-      user: "zach",
+    user: "s"
     }
   },
+  submit(name) {
+    this.setState({user: name});
+  },
   render() {
-    // var Content = this.state.user === "" ? <Splash /> : <Home />;
     var Content;
     if (this.state.user === "") {
-      Content = <Splash />
+      Content = <Splash handleSubmit={this.submit}/>
     } else {
       Content = <Home />
     }
