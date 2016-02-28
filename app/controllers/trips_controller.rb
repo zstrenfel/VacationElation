@@ -50,7 +50,7 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @destination = Destination.find(@trip.destination_id)
+    @destination = Destination.find(@trip["destination_id"])
   end
 
   # GET /trips/new
