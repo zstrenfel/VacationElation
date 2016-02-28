@@ -42,13 +42,8 @@ class TripsController < ApplicationController
         end
 
         hash[:destination_id] = md.id
-        p hash[:depart_price]
-        p hash[:return_price]
-        p hash[:hotel_price]
-
-        if hash[:depart_price] && hash[:return_price] && hash[:hotel_price]
-          p hash[:depart_price] + hash[:return_price] + hash[:hotel_price]
-          if hash[:depart_price] + hash[:return_price] + hash[:hotel_price] < params[:max_price].to_f
+        if hash[:depart_price] && hash[:return_price]
+          if hash[:depart_price] + hash[:return_price] < params[:max_price].to_f
             o = Trip.collection.insert_one(hash)
             @ret_trips << Trip.find(o.inserted_id)
           end
