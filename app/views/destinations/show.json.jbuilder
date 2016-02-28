@@ -3,6 +3,9 @@ json.destination do |d|
   json.city @destination.city
   json.state @destination.state
   json.country @destination.country
+  json.airports do |a|
+  	json.array! (@destination.airports)
+  end
   json.tags do |t|
   	json.array! (@destination.tags)
   end

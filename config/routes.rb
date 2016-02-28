@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users
   resources :destinations
 
+  post '/plantrips.json' => 'trips#planTrips'
+
   #how to use routing
   #Get User
   # => Get http://localhost:3000/users/:id.json

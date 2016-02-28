@@ -4,6 +4,7 @@
     "city": "San diego",
     "state": "CA",
     "country": "United State",
+    "airports": ["SAN"],
     "description": "San Diego is a city on the Pacific coast of California known for its beaches, parks and warm climate. Immense Balboa Park is the site of the world-famous San Diego Zoo, as well as numerous art galleries, artist studios, museums and gardens. A deep harbor is home to a large active naval fleet, with the USS Midway, an aircraft-carrier-turned-museum, open to the public.",
     "tags": [
       "city",
@@ -19,6 +20,7 @@
     "city": "Los Angeles",
     "state": "CA",
     "country": "United State",
+    "airports": ["LAX", "ONT"],
     "description": "Los Angeles is a sprawling Southern California city famed as the center of the nation’s film and television industry. Not far from its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, TCL Chinese Theater displays celebrities’ hand- and footprints, the Walk of Fame honors thousands of luminaries and vendors sell maps to stars’ homes.",
     "tags": [
       "city",
@@ -32,6 +34,7 @@
     "city": "San Francisco",
     "state": "CA",
     "country": "United State",
+    "airports": ["SFO", "OAK", "SJC"],
     "description": "San Francisco, in northern California, is a city on the tip of a peninsula surrounded by the Pacific Ocean and San Francisco Bay. It's known for its hilly landscape, year-round fog, iconic Golden Gate Bridge, cable cars and colorful Victorian houses. The Financial District's Transamerica Pyramid is its most distinctive skyscraper. In the bay sits Alcatraz Island, site of the notorious former prison.",
     "tags": [
       "city",
@@ -45,6 +48,7 @@
     "city": "Yellowstone National Park",
     "state": "Wyoming",
     "country": "United State",
+    "airports": ["WYS"],
     "description": "Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot. Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. Yellowstone features dramatic canyons, alpine rivers, lush forests, hot springs and gushing geysers, including its most famous, Old Faithful. It's also home to hundreds of animal species, including bears, wolves, bison, elk and antelope.",
     "tags": [
       "outdoots",
@@ -54,14 +58,16 @@
     ]
   },
   {
-    "name": "Oasis trip",
-    "city": "Blue",
-    "state": "Nebraska",
-    "country": "Liechtenstein",
-    "description": "Qui sunt excepteur aliquip incididunt officia sit amet quis.",
+    "name": "Orlando trip",
+    "city": "Orlando",
+    "state": "Florida",
+    "country": "United State",
+    "airports": ["MCO", "MLB"],
+    "description": "Orlando, a city in central Florida, is home to more than a dozen theme parks. Chief among its claims to fame is Walt Disney World, comprised of 4 parks, including Magic Kingdom and Epcot, and 2 water parks. Another major player, Universal Orlando, offers 2 parks: Universal Studios and Islands of Adventure, with the Wizarding World of Harry Potter straddling both.",
     "tags": [
-      "museum",
-      "shopping"
+      "shopping",
+      "city",
+      "relaxing"
     ]
   },
   {
@@ -69,6 +75,7 @@
     "city": "Las Vegas",
     "state": "NV",
     "country": "United State",
+    "airports": ["LAS"],
     "description": "Las Vegas, in Nevada’s Mojave Desert, is a resort town famed for its buzzing energy, 24-hour casinos and endless entertainment options. Its focal point is the Strip, just over 4 miles long and lined with elaborate theme hotels such as the pyramid-shaped Luxor and the Venetian, complete with Grand Canal; luxury resorts including the Bellagio, set behind iconic dancing fountains; and innumerable casinos.",
     "tags": [
       "city",
@@ -78,17 +85,18 @@
     ]
   },
   {
-    "name": "Hawaii trip",
-    "city": "Hawaii",
-    "state": "Hawaii",
+    "name": "Chicago trip",
+    "city": "Chicago",
+    "state": "Illinois",
     "country": "United State",
-    "description": "Hawaii, a U.S. state, is an isolated volcanic archipelago in the Central Pacific. Its islands are renowned for their rugged landscapes of cliffs, waterfalls, tropical foliage and beaches with gold, red, black and even green sands. Of the 6 main islands, Oahu has Hawaii’s only big city, Honolulu, home to crescent Waikiki Beach and the Pearl Harbor memorials.",
+    "airports": ["ORD"],
+    "description": "Chicago, on Lake Michigan in Illinois, is among the largest cities in the U.S. Famed for its bold architecture, it has a skyline bristling with skyscrapers such as the iconic John Hancock Center, sleek, 1,451-ft. Willis Tower and neo-Gothic Tribune Tower. The city is also renowned for its museums, including the Art Institute and its expansive collections, including noted Impressionist works.",
     "tags": [
-      "outdoors",
+      "city",
       "beach",
       "sightseeing",
       "relaxing",
-      "fresh_air"
+      "museum"
     ]
   },
   {
@@ -96,6 +104,7 @@
     "city": "New York City",
     "state": "NY",
     "country": "United State",
+    "airports": ["JFK", "EWR", "LGA"],
     "description": "Home to the Empire State Building, Times Square, Statue of Liberty and other iconic sites, New York City is a fast-paced, globally influential center of art, culture, fashion and finance. The city’s 5 boroughs sit where the Hudson River meets the Atlantic Ocean, with the island borough of Manhattan at the \"Big Apple's\" core.",
     "tags": [
       "museum",
@@ -109,6 +118,7 @@
     "city": "Seattle",
     "state": "WA",
     "country": "United State",
+    "airports": ["SEA"],
     "description": "Seattle, on Puget Sound in the Pacific Northwest, is surrounded by water, mountains and evergreen forests, and encompasses thousands of acres of parkland. It’s home to a thriving tech industry, with Microsoft and Amazon.com headquartered in its metropolitan area. The futuristic Space Needle, a legacy of the 1962 World’s Fair, is its most recognizable landmark.",
     "tags": [
       "museum",
@@ -122,6 +132,7 @@
     "city": "Boston",
     "state": "MA",
     "country": "United State",
+    "airports": ["BOS"],
     "description": "Boston is Massachusetts’ capital and largest city. Founded in 1630, it’s one of the oldest cities in the U.S. The key role it played in the American Revolution is highlighted on the Freedom Trail, a 2.5-mile walking route of historic sites that tells the story of the nation’s founding. One stop, former meeting house Faneuil Hall, is a popular marketplace.",
     "tags": [
       "museum",
