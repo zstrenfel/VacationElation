@@ -1,6 +1,7 @@
 class Trip
   include Mongoid::Document
-
+  attr_accessor :data_start, :date_end, :departure_airport, :hotel_prices, :depart_price, :return_price, :destination_id
+  
   field :date_start, type: String
   field :date_end, type: String
   field :departure_airport, type: String 
