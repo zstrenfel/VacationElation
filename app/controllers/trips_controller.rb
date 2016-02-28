@@ -19,25 +19,35 @@ class TripsController < ApplicationController
       @ret_trips = []
       #contruct new Trip objects
       match_destinations.each do |md|
+        city = md.city
+        hotel_info = ExpediaWS.searchCheapestHotels(md.city, params[:date_start], params[:date_end])
+        if hotel_info
+          hash[:hotel_name] = hotel_info["name"]
+          hash[:hotel_address] = hotel_info["address"]
+          hash[:hotel_StarRating] = hotel_info["StarRating"]
+          hash[:hotel_GuestRating] = hotel_info["GuestRating"]
+          hash[:hotel_price] = hotel_info["hotel_price"]
+        end
+
         depart_trip = ExpediaWS.findCheapestFlightToDest(start_airport, md, params[:date_start])
-        hash[:depart_price] = depart_trip[:price]
-        hash[:arrival_airport_leave] = depart_trip[:airport]
+        if depart_trip
+          hash[:depart_price] = depart_trip[:price]
+          hash[:arrival_airport_leave] = depart_trip[:airport]
+        end
 
         return_trip = ExpediaWS.findCheapestFlightFromDest(md, start_airport, params[:date_end])
-        hash[:return_price] = return_trip[:price]
-        hash[:departure_airport_back] = return_trip[:airport]
+        if return_trip
+          hash[:return_price] = return_trip[:price]
+          hash[:departure_airport_back] = return_trip[:airport]
+        end
 
         hash[:destination_id] = md.id
-        if hash[:depart_price] + hash[:return_price] < params[:max_price].to_f
-          o = Trip.collection.insert_one(hash)
-          @ret_trips << Trip.find(o.inserted_id)
+        if hash[:depart_price] && hash[:return_price]
+          if hash[:depart_price] + hash[:return_price] < params[:max_price].to_f
+            o = Trip.collection.insert_one(hash)
+            @ret_trips << Trip.find(o.inserted_id)
+          end
         end
-      end
-
-      @ret_trips.each do |trip|
-        p trip
-        p trip["depart_price"]
-        p trip[:depart_price]
       end
   end
 

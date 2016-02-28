@@ -1,6 +1,6 @@
 json.array!(@ret_trips) do |trip|
 	json.trip do
-	  json.hotel_prices trip.hotel_prices
+	  json.hotel_price trip.hotel_price
 
 	  json.departure do 
   		json.depart_price trip["depart_price"]
