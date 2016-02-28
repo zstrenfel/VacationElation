@@ -135,3 +135,10 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+    clients:
+        default:
+            uri: "mongodb://h48946:12345678@ds019048.mlab.com:19048/heroku_f3pphnl7"
+            options: 
+                connect_timeout: 15

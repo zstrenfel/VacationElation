@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :destinations
 
   post '/plantrips.json' => 'trips#planTrips'
+  root 'detinations'
 
   #how to use routing
   #Get User
