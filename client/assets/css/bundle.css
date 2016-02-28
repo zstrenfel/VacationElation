@@ -189,7 +189,8 @@ html, body {
   vertical-align: baseline; }
 
 body {
-  background-color: #FCFCFC; }
+  background-image: url("../../imgs/geometry2.png");
+  background-image: url("../../imgs/geometry2.png"); }
 
 .divider {
   display: block;
@@ -212,9 +213,11 @@ body {
     display: table; }
 
 .app {
+  display: block;
   height: 100%;
+  overflow: auto;
   width: 100%;
-  padding-bottom: 10px; }
+  border-bottom: 10px solid #333; }
 
 .form, .trip-params, .splash .sign-up {
   float: left;
@@ -232,7 +235,24 @@ body {
 .top-nav {
   overflow: hidden;
   background-color: #333;
-  height: 50px; }
+  height: 50px;
+  border: 2px solid #333;
+  position: relative; }
+  .top-nav img {
+    margin-left: 20px;
+    height: 100px;
+    width: auto;
+    opacity: 1;
+    display: inline; }
+  .top-nav h2 {
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #fff;
+    line-height: 50px;
+    margin-left: 10px;
+    display: inline;
+    position: absolute;
+    top: 0; }
   .top-nav ul {
     list-style-type: none;
     padding: 0;
@@ -258,6 +278,14 @@ body {
   background-color: #999999;
   color: #000; }
 
+.half {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .half:last-child {
+    margin-right: 0; }
+
 footer {
   position: absolute;
   width: 100%;
@@ -268,7 +296,8 @@ footer {
   padding-top: 5px; }
 
 .home {
-  height: calc(100% - 39px); }
+  height: calc(100% - 50px);
+  overflow: auto; }
 
 .third {
   float: left;
@@ -281,6 +310,13 @@ footer {
     margin-right: 0; }
   .third:nth-child(3n+1) {
     clear: left; }
+
+h3.price {
+  font-weight: 300;
+  font-size: 1.3em;
+  font-color: #c4c4c4;
+  margin: 0 auto;
+  text-align: center; }
 
 .full {
   float: left;
@@ -337,9 +373,7 @@ footer {
   background-image: url("../../imgs/splash.jpg");
   background-size: 100% auto;
   height: calc(100% - 50px);
-  width: 100%;
-  text-align: center;
-  overflow: hidden; }
+  text-align: center; }
   .splash h1 {
     margin-bottom: 5px;
     font-size: 2em; }
@@ -361,23 +395,22 @@ footer {
     .splash .sign-up label {
       font-weight: 400;
       color: #999; }
-
-.half {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%;
-  padding-top: 30px; }
-  .half:last-child {
-    margin-right: 0; }
-  .half.splash-content {
-    height: 100%;
-    padding-top: 30px;
-    background-color: rgba(255, 255, 255, 0.9); }
-  .half img.hula {
-    margin-top: 30px;
-    height: 500px;
-    width: auto; }
+  .splash .half {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    padding-top: 30px; }
+    .splash .half:last-child {
+      margin-right: 0; }
+    .splash .half.splash-content {
+      height: 100%;
+      padding-top: 30px;
+      background-color: rgba(255, 255, 255, 0.9); }
+    .splash .half img.hula {
+      margin-top: 30px;
+      height: 500px;
+      width: auto; }
 
 @keyframes rise {
   from {
@@ -386,10 +419,9 @@ footer {
   to {
     opacity: 1;
     margin-top: 0px; } }
-
-.rise {
-  animation-name: rise;
-  animation-duration: 1.5s; }
+  .splash .rise {
+    animation-name: rise;
+    animation-duration: 1.5s; }
 
 .trip-container {
   float: left;

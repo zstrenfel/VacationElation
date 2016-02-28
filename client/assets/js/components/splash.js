@@ -16,13 +16,17 @@ export default React.createClass({
     change[name] = e.target.value;
     this.setState(change)
   },
+  submit(e) {
+    e.preventDefault();
+    this.props.handleSubmit(e.target[0].value);
+  },
   render() {
     return (
       <div className='splash'>
         <div className="half splash-content">
           <img src={'../../imgs/logo.png'} />
           <p> When you can't afford to go to Hawaii, we have your back. </p>
-          <form className="sign-up">
+          <form className="sign-up" onSubmit={this.submit}>
             <label htmlFor="email"> Email </label>
             <input type="text"
                    value={this.state.email}
@@ -39,8 +43,8 @@ export default React.createClass({
           </form>
 
         </div>
-         <div className="half hula rise">
-          <img className="hula" src={'../../imgs/hula.png'} />
+         <div className="half hula">
+          <img className="hula rise" src={'../../imgs/hula.png'} />
         </div>
       </div>
     )

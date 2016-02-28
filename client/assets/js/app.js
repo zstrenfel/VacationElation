@@ -11,14 +11,13 @@ export default React.createClass({
       user: ""
     }
   },
-  onSubmit(e) {
-    e.preventDefault;
-    console.log(e);
+  submit(name) {
+    this.setState({user: name});
   },
   render() {
     var Content;
     if (this.state.user === "") {
-      Content = <Splash />
+      Content = <Splash handleSubmit={this.submit}/>
     } else {
       Content = <Home />
     }
@@ -26,7 +25,6 @@ export default React.createClass({
       <div className="app">
       <TopNav user={this.state.user} />
         {Content}
-      <Footer />
       </div>
     )
   }

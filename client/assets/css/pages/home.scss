@@ -1,12 +1,19 @@
 .home {
-  height: calc(100% - 39px);
-
+  height: calc(100% - 50px);
+  overflow: auto;
 }
 
   .third {
     @include span-columns(12);
     @include omega(3n);
+  }
 
+  h3.price {
+    font-weight: 300;
+    font-size: 1.3em;
+    font-color: darken($light-gray, 10%);
+    margin: 0 auto;
+    text-align: center;
   }
 
   .full {

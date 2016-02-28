@@ -16,7 +16,7 @@ export default React.createClass({
   render() {
     var tags = this.generateTags();
     var style = {
-      color: randomcolor({luminosity:'dark'})
+      color: randomcolor({hue: "blue"})
     }
 
     return (

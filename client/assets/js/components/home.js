@@ -92,7 +92,7 @@ export default React.createClass({
  render() {
     var tags = this.generateTags();
     return (
-      <div className="home" >
+      <div className="home">
           <form onSubmit={this.submit} className="trip-params">
           <div className='third'>
             <label htmlFor="airport"> Departing Airport </label>
@@ -120,6 +120,7 @@ export default React.createClass({
             </div>
             <div className='third last'>
               <label htmlFor="price"> Set Your Max Price </label>
+              <h3 className="price"> ${this.state.maxPrice} </h3>
               <Rcslider name="price" onChange={this.handleChangePrice} value={this.state.maxPrice} max={3000}/>
             </div>
             <div className="full">

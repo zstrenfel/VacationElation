@@ -2,9 +2,7 @@
   @include background-image(url("../../imgs/splash.jpg"));
   background-size: 100% auto;
   height: calc(100% - 50px);
-  width: 100%;
   text-align: center;
-  overflow: hidden;
 
   h1 {
     margin-bottom: 5px;
@@ -30,32 +28,34 @@
       color: $medium-gray;
     }
   }
-}
 
-.half {
-  @include span-columns(6);
-  padding-top: 30px;
 
-  &.splash-content {
-    height: 100%;
+  .half {
+    @include span-columns(6);
     padding-top: 30px;
-    background-color: rgba(255, 255, 255, 0.9);
+
+
+    &.splash-content {
+      height: 100%;
+      padding-top: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    img.hula {
+      margin-top: 30px;
+      height: 500px;
+      width: auto;
+    }
   }
-  img.hula {
-    margin-top: 30px;
-    height: 500px;
-    width: auto;
-  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      margin-top: 200px; }
+    to {
+      opacity: 1;
+      margin-top: 0px; } }
+
+  .rise {
+    animation-name: rise;
+    animation-duration: 1.5s; }
 }
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    margin-top: 200px; }
-  to {
-    opacity: 1;
-    margin-top: 0px; } }
-
-.rise {
-  animation-name: rise;
-  animation-duration: 1.5s; }
