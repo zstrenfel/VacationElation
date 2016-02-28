@@ -1,0 +1,33 @@
+.trip-container {
+  @include span-columns(9);
+  height: 100%;
+  min-height: 600px;
+  overflow: scroll;
+  padding: 30px 5px;
+}
+
+.trip-option {
+  @include span-columns(12);
+  height: 150px;
+  background-color: lighten($light-gray, 10%);
+  margin: 10px 0;
+  padding: 10px;
+
+  h1 {
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  .location {
+    @include span-columns(10);
+    height: auto;
+  }
+
+  .price {
+    @include span-columns(2);
+    @include omega;
+    height: auto;
+    color: #1E824C;
+  }
+
+}
