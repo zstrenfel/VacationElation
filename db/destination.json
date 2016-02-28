@@ -1,0 +1,142 @@
+[
+  {
+    "_id": "56d138c989853e2f9d1b3943",
+    "name": "San diego trip",
+    "city": "San diego",
+    "state": "CA",
+    "country": "United State",
+    "description": "San Diego is a city on the Pacific coast of California known for its beaches, parks and warm climate. Immense Balboa Park is the site of the world-famous San Diego Zoo, as well as numerous art galleries, artist studios, museums and gardens. A deep harbor is home to a large active naval fleet, with the USS Midway, an aircraft-carrier-turned-museum, open to the public.",
+    "tags": [
+      "city",
+      "beach",
+      "sightseeing",
+      "relax",
+      "fresh_air",
+      "outdoors"
+    ]
+  },
+  {
+    "_id": "56d138c932c03b8a4ee43165",
+    "name": "LA trip",
+    "city": "Los Angeles",
+    "state": "CA",
+    "country": "United State",
+    "description": "Los Angeles is a sprawling Southern California city famed as the center of the nation’s film and television industry. Not far from its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, TCL Chinese Theater displays celebrities’ hand- and footprints, the Walk of Fame honors thousands of luminaries and vendors sell maps to stars’ homes.",
+    "tags": [
+      "city",
+      "shopping",
+      "nightlife",
+      "relaxing"
+    ]
+  },
+  {
+    "_id": "56d138c9209a4722af3fd772",
+    "name": "SF trip",
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United State",
+    "description": "San Francisco, in northern California, is a city on the tip of a peninsula surrounded by the Pacific Ocean and San Francisco Bay. It's known for its hilly landscape, year-round fog, iconic Golden Gate Bridge, cable cars and colorful Victorian houses. The Financial District's Transamerica Pyramid is its most distinctive skyscraper. In the bay sits Alcatraz Island, site of the notorious former prison.",
+    "tags": [
+      "city",
+      "shopping",
+      "nightlife",
+      "relaxing"
+    ]
+  },
+  {
+    "_id": "56d138c90404cb7b81948a96",
+    "name": "Yellowstone trip",
+    "city": "Yellowstone National Park",
+    "state": "Wyoming",
+    "country": "United State",
+    "description": "Yellowstone National Park is a nearly 3,500-sq.-mile wilderness recreation area atop a volcanic hot spot. Mostly in Wyoming, the park spreads into parts of Montana and Idaho too. Yellowstone features dramatic canyons, alpine rivers, lush forests, hot springs and gushing geysers, including its most famous, Old Faithful. It's also home to hundreds of animal species, including bears, wolves, bison, elk and antelope.",
+    "tags": [
+      "outdoots",
+      "mountains",
+      "fresh_air",
+      "relaxing"
+    ]
+  },
+  {
+    "_id": "56d138c9124f3a77796d3972",
+    "name": "Oasis trip",
+    "city": "Blue",
+    "state": "Nebraska",
+    "country": "Liechtenstein",
+    "description": "Qui sunt excepteur aliquip incididunt officia sit amet quis.",
+    "tags": [
+      "museum",
+      "shopping"
+    ]
+  },
+  {
+    "_id": "56d138c94d0dbe1d48d1bfcf",
+    "name": "Casino trip",
+    "city": "Las Vegas",
+    "state": "NV",
+    "country": "United State",
+    "description": "Las Vegas, in Nevada’s Mojave Desert, is a resort town famed for its buzzing energy, 24-hour casinos and endless entertainment options. Its focal point is the Strip, just over 4 miles long and lined with elaborate theme hotels such as the pyramid-shaped Luxor and the Venetian, complete with Grand Canal; luxury resorts including the Bellagio, set behind iconic dancing fountains; and innumerable casinos.",
+    "tags": [
+      "city",
+      "shopping",
+      "nightlife",
+      "relaxing"
+    ]
+  },
+  {
+    "_id": "56d138c961fe931c2abb7b22",
+    "name": "Hawaii trip",
+    "city": "Hawaii",
+    "state": "Hawaii",
+    "country": "United State",
+    "description": "Hawaii, a U.S. state, is an isolated volcanic archipelago in the Central Pacific. Its islands are renowned for their rugged landscapes of cliffs, waterfalls, tropical foliage and beaches with gold, red, black and even green sands. Of the 6 main islands, Oahu has Hawaii’s only big city, Honolulu, home to crescent Waikiki Beach and the Pearl Harbor memorials.",
+    "tags": [
+      "outdoors",
+      "beach",
+      "sightseeing",
+      "relaxing",
+      "fresh_air"
+    ]
+  },
+  {
+    "_id": "56d138c9bf7779fbf57afb94",
+    "name": "NY trip",
+    "city": "New York City",
+    "state": "NY",
+    "country": "United State",
+    "description": "Home to the Empire State Building, Times Square, Statue of Liberty and other iconic sites, New York City is a fast-paced, globally influential center of art, culture, fashion and finance. The city’s 5 boroughs sit where the Hudson River meets the Atlantic Ocean, with the island borough of Manhattan at the \"Big Apple's\" core.",
+    "tags": [
+      "museum",
+      "shopping",
+      "city",
+      "nightlift"
+    ]
+  },
+  {
+    "_id": "56d138c996fe1ae126ce4472",
+    "name": "Seattle trip",
+    "city": "Seattle",
+    "state": "WA",
+    "country": "United State",
+    "description": "Seattle, on Puget Sound in the Pacific Northwest, is surrounded by water, mountains and evergreen forests, and encompasses thousands of acres of parkland. It’s home to a thriving tech industry, with Microsoft and Amazon.com headquartered in its metropolitan area. The futuristic Space Needle, a legacy of the 1962 World’s Fair, is its most recognizable landmark.",
+    "tags": [
+      "museum",
+      "city",
+      "nighlife",
+      "relaxing"
+    ]
+  },
+  {
+    "_id": "56d138c94f0176af0dbc3bb0",
+    "name": "Boston trip",
+    "city": "Boston",
+    "state": "MA",
+    "country": "United State",
+    "description": "Boston is Massachusetts’ capital and largest city. Founded in 1630, it’s one of the oldest cities in the U.S. The key role it played in the American Revolution is highlighted on the Freedom Trail, a 2.5-mile walking route of historic sites that tells the story of the nation’s founding. One stop, former meeting house Faneuil Hall, is a popular marketplace.",
+    "tags": [
+      "museum",
+      "city",
+      "relaxing"
+    ]
+  }
+]

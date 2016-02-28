@@ -1,0 +1,82 @@
+[
+  {
+    "date_start": "Thu Mar 03 2016 15:05:13 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 05:33:38 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 414,
+    "depart_price": 420,
+    "return_price": 545
+  },
+  {
+    "date_start": "Thu Mar 03 2016 09:13:14 GMT+0000 (UTC)",
+    "date_end": "Tue Mar 08 2016 20:29:49 GMT+0000 (UTC)",
+    "departure_airport": "SJC",
+    "hotel_prices": 592,
+    "depart_price": 413,
+    "return_price": 365
+  },
+  {
+    "date_start": "Fri Mar 04 2016 17:31:09 GMT+0000 (UTC)",
+    "date_end": "Tue Mar 08 2016 03:53:06 GMT+0000 (UTC)",
+    "departure_airport": "LAX",
+    "hotel_prices": 406,
+    "depart_price": 496,
+    "return_price": 595
+  },
+  {
+    "date_start": "Thu Mar 03 2016 03:31:30 GMT+0000 (UTC)",
+    "date_end": "Sat Mar 19 2016 04:10:05 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 473,
+    "depart_price": 398,
+    "return_price": 243
+  },
+  {
+    "date_start": "Fri Mar 04 2016 03:54:37 GMT+0000 (UTC)",
+    "date_end": "Tue Mar 15 2016 15:04:05 GMT+0000 (UTC)",
+    "departure_airport": "OAK",
+    "hotel_prices": 244,
+    "depart_price": 304,
+    "return_price": 570
+  },
+  {
+    "date_start": "Fri Mar 04 2016 12:41:42 GMT+0000 (UTC)",
+    "date_end": "Mon Mar 14 2016 14:45:41 GMT+0000 (UTC)",
+    "departure_airport": "LAX",
+    "hotel_prices": 343,
+    "depart_price": 200,
+    "return_price": 479
+  },
+  {
+    "date_start": "Thu Mar 03 2016 03:33:37 GMT+0000 (UTC)",
+    "date_end": "Thu Mar 10 2016 16:59:38 GMT+0000 (UTC)",
+    "departure_airport": "JFK",
+    "hotel_prices": 375,
+    "depart_price": 319,
+    "return_price": 514
+  },
+  {
+    "date_start": "Thu Mar 03 2016 22:45:41 GMT+0000 (UTC)",
+    "date_end": "Fri Mar 18 2016 00:09:41 GMT+0000 (UTC)",
+    "departure_airport": "SFO",
+    "hotel_prices": 418,
+    "depart_price": 417,
+    "return_price": 442
+  },
+  {
+    "date_start": "Thu Mar 03 2016 09:42:10 GMT+0000 (UTC)",
+    "date_end": "Wed Mar 16 2016 11:01:31 GMT+0000 (UTC)",
+    "departure_airport": "LAX",
+    "hotel_prices": 215,
+    "depart_price": 319,
+    "return_price": 589
+  },
+  {
+    "date_start": "Fri Mar 04 2016 16:59:01 GMT+0000 (UTC)",
+    "date_end": "Sat Mar 19 2016 07:11:56 GMT+0000 (UTC)",
+    "departure_airport": "SFO",
+    "hotel_prices": 526,
+    "depart_price": 426,
+    "return_price": 533
+  }
+]
