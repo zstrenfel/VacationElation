@@ -5,12 +5,12 @@
 # okayVacay
 Created for Launch Hackathon 2016 by [Zach Strenfel](https://github.com/zstrenfel) & [Jason Huang](https://github.com/huang5640)
 
-*Visit the site [here.](https://okayvacay-client.herokuapp.com)*
+*Visit the site* **[here.](https://okayvacay-client.herokuapp.com)**
 
-*Note: the server is currently unavaliable and this presents only an example of our build. No account information is needed as well; simply input any string into the email field and click 'Sign-Up.
+*Note: the server is currently unavaliable and this presents only an example of our build. No account information is needed as well; simply input any string into the email field and click 'Sign-Up.*
 
 
-To run this app locally, start the rails server in the root directory (rails s) and the node server inside of the client folder (npm start), simultaneously*
+*To run this app locally, start the rails server in the root directory (rails s) and the node server inside of the client folder (npm start), simultaneously*
 
 ----------
 
